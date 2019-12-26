@@ -1,2 +1,45 @@
 <!-- ./views/index.handlebars -->
-hello world
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto">
+      <table class="table table-borderless text-center">
+        <tbody>
+          <tr>
+            <td></td>
+            <td class="table-info" style="width: 30rem;">
+              <span>總金額：</span>
+              <h3 id="sum">
+              </h3>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-hover text-center" style="width: 30rem;" align="center">
+        <tbody>
+          {{#each todos}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>
+              <a href="/todos/{{{this.id}}}/edit" class="btn btn-success btn-sm mr-2">edit</a>
+              <form action="/todos/{{{this.id}}}/delete?_method=DELETE" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger btn-sm">delete</button>
+              </form>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <table class="table table-borderless text-center">
+        <tbody>
+          <tr>
+            <td>
+              <a href="/todos/new" class="btn btn-outline-info">新增一筆待辦</a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
