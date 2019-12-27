@@ -6,10 +6,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Todo List</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 
 <body>
+  <header>
+    <!-- navigation -->
+    <nav class="navbar navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+            width="30" height="30" class="d-inline-block align-top" alt="你的待辦清單">
+          你的待辦清單
+        </a>
+
+        {{#if isAuthenticated}}
+        <a href="/users/logout" class="btn btn-outline-info">登出</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-outline-info">登入</a>
+        {{/if}}
+      </div>
+    </nav>
+    <div class="banner"></div>
+  </header>
+  <!-- partial template -->
   {{{body}}}
+  <!-- javascript files -->
+  <script src="/javascripts/jquery-3.3.1.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+  <script src="/javascripts/main.js"></script>
 </body>
 
 </html>

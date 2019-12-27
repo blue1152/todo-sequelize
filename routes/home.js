@@ -5,9 +5,8 @@ const router = express.Router();
 const db = require("../models");
 const Todo = db.Todo;
 const User = db.User;
-// // 載入 auth middleware
+// 載入 auth middleware
 const { authenticated } = require("../config/auth");
-// 設定首頁路由器
 // 列出全部 Todo
 router.get("/", authenticated, (req, res) => {
   User.findByPk(req.user.id)
